@@ -1,0 +1,89 @@
+@keyframes randomBodyColor {
+  15% {
+    background-color: #2A117A;
+  }
+  30% {
+    background-color: #7BC1E9;
+  }
+  35% {
+    background-color: #C60E06;
+  }
+  45% {
+    background-color: #413FFD;
+  }
+  60% {
+    background-color: #E97EDE;
+  }
+  65% {
+    background-color: #C15882;
+  }
+  75% {
+    background-color: #0F155E;
+  }
+  90% {
+    background-color: #9D4D45;
+  }
+  95% {
+    background-color: #CBD7A1;
+  }
+}
+@keyframes randomDivColor {
+  15% {
+    background-color: #3A8F37;
+  }
+  30% {
+    background-color: #5A483E;
+  }
+  45% {
+    background-color: #FF9D71;
+  }
+  60% {
+    background-color: #F32813;
+  }
+  75% {
+    background-color: #BA65FF;
+  }
+  90% {
+    background-color: #0BB145;
+  }
+}
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+.bg-random,
+.bounce {
+  height: 100%;
+  width: 100%;
+}
+
+.bg-random, .bounce {
+  animation-name: randomBodyColor;
+  animation-duration: 15s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+@keyframes bounceIn {
+  0%, 100% {
+    transform: translateY(100px);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(360px);
+  }
+}
+
+.bounce {
+  margin: 0 20px;
+  border-radius: 50px;
+  height: 6rem;
+  width: 6rem;
+  animation-name: bounceIn, randomDivColor;
+}
+
+/*# sourceMappingURL=style.css.map */

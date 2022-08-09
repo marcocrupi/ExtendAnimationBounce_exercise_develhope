@@ -1,0 +1,53 @@
+@use 'randomcolor' as *;
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+@mixin bounce(
+  $animationOne,
+  $animationTwo,
+  $translationStart: 0px,
+  $translationDistance: 60px,
+  $animationDuration,
+  $animationIteration,
+  $animationTiming
+) {
+  @keyframes bounceIn {
+    0%,
+    100% {
+      transform: translateY($translationStart);
+      opacity: 1;
+    }
+    50% {
+      transform: translateY($translationDistance);
+    }
+  }
+  animation-name: $animationOne,$animationTwo;
+  animation-duration: $animationDuration;
+  animation-iteration-count: $animationIteration;
+  animation-timing-function: $animationTiming;
+}
+
+html,
+body,
+.bg-random {
+  height: 100%;
+  width: 100%;
+}
+
+.bg-random {
+  @include bounce(null, randomBodyColor,100px, 360px, 15s, infinite, linear);
+}
+
+.bounce {
+  margin: 0 20px;
+  border-radius: 50px;
+  height: 6rem;
+  width: 6rem;
+  @extend .bg-random;
+  animation-name: bounceIn, randomDivColor;
+}
